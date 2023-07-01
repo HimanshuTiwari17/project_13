@@ -1,33 +1,19 @@
 import React from "react";
-
+import { pageLinks } from "../data";
+import PageLink from "./PageLink";
 const Pagelinks = ({ type }) => {
   return (
     <ul className={`${type}-links`} id={`${type}-links`}>
-      <li>
-        <a href="#home" className={`${type}-link`}>
-          home
-        </a>
-      </li>
-
-      <li>
-        <a href="#about" className={`${type}-link`}>
-          about
-        </a>
-      </li>
-
-      <li>
-        <a href="#services" className={`${type}-link`}>
-          {" "}
-          services{" "}
-        </a>
-      </li>
-
-      <li>
-        <a href="#tours" className={`${type}-link`}>
-          {" "}
-          tours
-        </a>
-      </li>
+      {pageLinks.map((link) => {
+        return (
+          <PageLink
+            key={link.id}
+            text={link.text}
+            link={link.href}
+            type={`${type}`}
+          />
+        );
+      })}
     </ul>
   );
 };

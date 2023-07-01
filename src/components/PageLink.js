@@ -1,7 +1,13 @@
 import React from "react";
 
-const PageLink = () => {
-  return <div>PageLink</div>;
+const PageLink = (prop) => {
+  return (
+    <li>
+      <a href={`${prop.link}`} className={`${prop.type}-link`}>
+        {prop.text}
+      </a>
+    </li>
+  );
 };
 
 export default PageLink;
